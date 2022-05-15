@@ -59,8 +59,37 @@ console.log(arrayJ);
 // Во всех задания ниже сделать функцию!!!
 // В комментариях к коду описать задание.
 // =========================================================//
-// Необходимо создать функцию hasElem, которая параметрами будет принимать массив и строку, и возвращать true, если строка есть в массиве, и false - если нет
+// Необходимо создать функцию hasElem, которая параметрами будет принимать массив и строку,
+// и возвращать true, если строка есть в массиве, и false - если нет
+/**
+ *
+ * @param {array} array
+ * @param {string} element
+ * @returns {boolean}
+ */
+function hasElem(array, element) {
+  return array.includes(element);
+}
+
+const arrayFacts = [1, "hello", 3, 4, 5, "a", "find me"];
+const elemDetect = "find me";
+console.log(hasElem(arrayFacts, elemDetect));
+
 // Дан массив с числами. Проверьте, что в этом массиве есть указанное число. Если есть - вернуть true, а если нет - вернуть false.
+/**
+ *
+ * @param {array} array
+ * @param {string} element
+ * @returns {boolean}
+ */
+function hasElemtIs(array, element) {
+  return array.includes(element);
+}
+
+const arrayData = [1, "hello", 3, 4, 5, "a", "find me"];
+const elemFind = 5;
+console.log(hasElemtIs(arrayData, elemFind));
+
 // Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд. Если есть -  вернуть true[2,2,1], а если нет - вернуть false[1,2,1]
 // Функция, которая возвращает массив заполненный 10 случайными числами в интервале от 5 до 33. Math.random()
 // Дан массив arr. Найдите среднее арифметическое его элементов. Проверьте задачу на массиве с элементами 12, 15, 20, 25, 59, 79.
