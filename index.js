@@ -52,9 +52,9 @@ arrayI.splice(6, 0, "c");
 arrayI.splice(8, 0, "e");
 console.log(arrayI);
 
-const arrayJ = [3, 4, 1, 2, 7];
-arrayJ.sort();
-console.log(arrayJ);
+const arraySort = [3, 4, 1, 2, 7];
+arraySort.sort();
+console.log(arraySort);
 
 // Во всех задания ниже сделать функцию!!!
 // В комментариях к коду описать задание.
@@ -91,5 +91,53 @@ const elemFind = 5;
 console.log(hasElemtIs(arrayData, elemFind));
 
 // Дан массив с числами. Проверьте, есть ли в нем два одинаковых числа подряд. Если есть -  вернуть true[2,2,1], а если нет - вернуть false[1,2,1]
+/**
+ *
+ * @param {array} array
+ * @returns {boolean}
+ */
+function hasElemIdent(array) {
+  const iterator = array.keys();
+  for (const key of iterator) {
+    if (array[key] === array[key + 1]) {
+      return true;
+    }
+  }
+  return false;
+}
+
+const arrayDataCheck = [1, "hello", 3, 3, 1, 5, "a", 13, "find me"];
+console.log(hasElemIdent(arrayDataCheck));
+
 // Функция, которая возвращает массив заполненный 10 случайными числами в интервале от 5 до 33. Math.random()
+/**
+ *
+ * @returns {array}
+ */
+function fillArray() {
+  return Array.from({ length: 10 }, () => getRndInteger(5, 33));
+}
+
+/**
+ *
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ */
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+console.log(fillArray());
+
 // Дан массив arr. Найдите среднее арифметическое его элементов. Проверьте задачу на массиве с элементами 12, 15, 20, 25, 59, 79.
+/**
+ *
+ * @param {array} array
+ * @returns {number}
+ */
+function findArithmetic(array) {
+  return array.reduce((elem, elem1) => elem + elem1) / array.length;
+}
+const arr = [12, 15, 20, 25, 59, 79];
+console.log(findArithmetic(arr));
