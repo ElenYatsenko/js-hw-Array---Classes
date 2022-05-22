@@ -83,6 +83,9 @@ console.log(hasElem(arrayFacts, elemDetect));
  * @returns {boolean}
  */
 function hasElemtIs(array, element) {
+  if (array.length <= 0) {
+    return "Passed an empty array. It's very bad.";
+  }
   return array.includes(element);
 }
 
@@ -97,16 +100,19 @@ console.log(hasElemtIs(arrayData, elemFind));
  * @returns {boolean}
  */
 function hasElemIdent(array) {
-  const iterator = array.keys();
-  for (const key of iterator) {
-    if (array[key] === array[key + 1]) {
+  if (array.length <= 0) {
+    return "Passed an empty array. Try to fill in the data. ";
+  }
+
+  for (let index = 0; index < array.length; index++) {
+    if (array[index] === array[index + 1]) {
       return true;
     }
   }
   return false;
 }
 
-const arrayDataCheck = [1, "hello", 3, 3, 1, 5, "a", 13, "find me"];
+const arrayDataCheck = [1, "hello", "hell", 3, 1, 15, "a", 13, "find me"];
 console.log(hasElemIdent(arrayDataCheck));
 
 // Функция, которая возвращает массив заполненный 10 случайными числами в интервале от 5 до 33. Math.random()
@@ -137,6 +143,10 @@ console.log(fillArray());
  * @returns {number}
  */
 function findArithmetic(array) {
+  if (array.length <= 0) {
+    return "The array needs to be filled with data.";
+  }
+
   return array.reduce((elem, elem1) => elem + elem1) / array.length;
 }
 const arr = [12, 15, 20, 25, 59, 79];
