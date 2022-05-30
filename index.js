@@ -21,6 +21,9 @@ class RangeValidator {
     if (typeof to !== "number") {
       throw new TypeError("value must be number");
     }
+    if (to < this.from) {
+      throw new RangeError("value must be better");
+    }
     this._to = to;
   }
 
@@ -36,8 +39,8 @@ class RangeValidator {
   }
 }
 
-const qwerty = new RangeValidator(12, 25);
-console.log(qwerty.validate(15));
+const qwerty = new RangeValidator(112, 255);
+console.log(qwerty.validate(115));
 
 class Figure3D {
   constructor(name) {
